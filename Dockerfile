@@ -1,4 +1,4 @@
-from "jenkins/jenkins:2.183-jdk11"
+from "jenkins/jenkins:2.184-jdk11"
 
 USER root
 # 'Docker in Docker'.

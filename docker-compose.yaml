@@ -1,7 +1,7 @@
 version: '3'
 services:
   jenkins:
-    image: circulo7/jenkins_kube:2.183-jdk11
+    image: circulo7/jenkins_kube:2.184-jdk11
     ports:
       - "8080:8080"
     volumes:

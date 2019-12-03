@@ -1,7 +1,7 @@
 version: '3'
 services:
   jenkins:
-    image: circulo7/jenkins_kube:${JENKINS_VERSION}
+    image: circulo7/jenkins_kube:${TAG_VERSION}
     ports:
       - "8080:8080"
     volumes:

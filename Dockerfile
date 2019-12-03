@@ -21,14 +21,17 @@ RUN curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-co
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
 
 #Helm installation
-RUN curl -o get_helm.sh https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get && \
-    chmod +x get_helm.sh && \
-    ./get_helm.sh
+RUN curl -LO https://get.helm.sh/helm-v3.0.0-linux-amd64.tar.gz && tar -xzf helm-v3.0.0-linux-amd64.tar.gz && chmod +x linux-amd64/helm && mv linux-amd64/helm /usr/local/bin/
 
 #gcloud SDK installation  
 RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
     echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
     sudo apt-get update && sudo apt-get install google-cloud-sdk -y
+
+#flux installation
+RUN curl -LO https://github.com/fluxcd/flux/releases/download/1.16.0/fluxctl_linux_amd64 && chmod +x ./fluxctl_linux_amd64 && mv ./fluxctl_linux_amd64 /usr/local/bin/fluxctl
+
+
 
 USER jenkins

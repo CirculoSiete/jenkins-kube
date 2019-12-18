@@ -44,4 +44,10 @@ RUN curl -LO https://github.com/fluxcd/flux/releases/download/1.16.0/fluxctl_lin
     chmod +x ./fluxctl_linux_amd64 && \
     mv ./fluxctl_linux_amd64 /usr/local/bin/fluxctl
 
+#Kubeval installation
+RUN wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz && \
+    tar xf kubeval-linux-amd64.tar.gz && \
+    chmod +x kubeval && \
+    mv kubeval /usr/local/bin
+
 USER jenkins

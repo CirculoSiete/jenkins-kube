@@ -29,7 +29,7 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 
 #Helm installation
 RUN curl -LO https://get.helm.sh/helm-v3.0.3-linux-amd64.tar.gz && \
-    tar -xzf helm-v3.0.0-linux-amd64.tar.gz && \
+    tar -xzf helm-v3.0.3-linux-amd64.tar.gz && \
     chmod +x linux-amd64/helm && \
     mv linux-amd64/helm /usr/local/bin/
 

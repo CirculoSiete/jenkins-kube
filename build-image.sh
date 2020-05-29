@@ -10,10 +10,8 @@ echo $TAG_VERSION
 
 docker build --build-arg JENKINS_VERSION=${JENKINS_VERSION} \
    -t circulo7/jenkins_kube:${LOCAL_TAG_VERSION} \
-   -t circulo7/jenkins_kube:latest  \
    -t registry.circulosiete.com/library/circulo7/jenkins_kube:${LOCAL_TAG_VERSION} . && \
    git release $LOCAL_TAG_VERSION && \
    docker push circulo7/jenkins_kube:${LOCAL_TAG_VERSION} && \
-   docker push circulo7/jenkins_kube:latest && \
    docker push registry.circulosiete.com/library/circulo7/jenkins_kube:${LOCAL_TAG_VERSION} && \
    echo "Done"

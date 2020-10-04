@@ -5,7 +5,7 @@ USER root
 
 # 'Docker in Docker'.
 RUN apt-get update -qq \
-    && apt-get install -qqy apt-transport-https ca-certificates curl gnupg2 software-properties-common gettext-base
+    && apt-get install -qqy wget apt-transport-https ca-certificates curl gnupg2 software-properties-common gettext-base
 
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 
